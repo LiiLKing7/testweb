@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Brand colors - Purple #6b21a8 + White + Gold */
+  --color-primary: #6b21a8;
+  --color-primary-foreground: #ffffff;
+  --color-gold: hsl(38 65% 55%);
+  --color-gold-light: hsl(42 75% 65%);
+  --color-gold-dark: hsl(34 58% 42%);
+
+  /* Light mode */
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(271 30% 10%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(271 30% 10%);
+  --color-muted: hsl(270 20% 96%);
+  --color-muted-foreground: hsl(270 10% 45%);
+  --color-border: hsl(270 15% 88%);
+  --color-input: hsl(270 15% 88%);
+  --color-ring: hsl(271 76% 53%);
+  --color-destructive: hsl(0 84% 60%);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark {
+    --color-background: hsl(271 30% 6%);
+    --color-foreground: hsl(270 20% 96%);
+    --color-card: hsl(271 25% 10%);
+    --color-card-foreground: hsl(270 20% 96%);
+    --color-muted: hsl(271 20% 15%);
+    --color-muted-foreground: hsl(270 15% 60%);
+    --color-border: hsl(271 20% 18%);
+    --color-input: hsl(271 20% 18%);
+    --color-ring: hsl(271 76% 60%);
+    --color-primary: hsl(271 76% 62%);
+  }
+}
